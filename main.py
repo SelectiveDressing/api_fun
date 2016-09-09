@@ -27,7 +27,7 @@ def main():
     weather = r.json()
     print("\nCurrent Temp: {}".format(weather["main"]["temp"]))
 
-
+#booty
 
 if __name__ == '__main__':
     main()
