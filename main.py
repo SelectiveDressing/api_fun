@@ -45,9 +45,17 @@ def main():
         weather = r.json()
 
         emptyList = []
-        for item in weather:
-            emptyList.append(filter(lambda x: x["temp"], item))
-        print(emptyList)
+        for item in weather.keys():
+            if item == "list":
+                emptyList.append(weather["list"])
+        #print(emptyList)
+        raw_data = []
+        for x_list in emptyList:
+             for dict_item in x_list:
+                if "temp" in dict_item:
+                    print(dict_item["temp"])
+                    #raw_data.append(item["temp"])
+        #print(raw_data)
 
     else:
         sys.exit()
