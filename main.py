@@ -49,14 +49,34 @@ def main():
             if item == "list":
                 emptyList.append(weather["list"])
         #print(emptyList)
-        raw_data = []
+        raw_temp = []
+        raw_humidity = []
+        raw_pressure = []
+        raw_weather = []
         for x_list in emptyList:
              for dict_item in x_list:
                 if "temp" in dict_item:
-                    print(dict_item["temp"])
-                    #raw_data.append(item["temp"])
-        #print(raw_data)
+                    raw_temp.append(dict_item["temp"])
+                    #print(raw_temp)
 
+                if "humidity" in dict_item:
+                    raw_humidity.append(dict_item["humidity"])
+                    #print(raw_humidity)
+
+                if "pressure" in dict_item:
+                    raw_pressure.append(dict_item["pressure"])
+                    #print(raw_pressure)
+
+                if "weather" in dict_item:
+                    raw_weather.append(dict_item["weather"])
+                    #print(raw_weather)
+        print(raw_temp)
+        print("*"*10)
+        print(raw_humidity)
+        print("*"*10)
+        print(raw_pressure)
+        print("*"*10)
+        print(raw_weather)
     else:
         sys.exit()
 
