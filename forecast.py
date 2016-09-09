@@ -1,6 +1,16 @@
 class Forecast():
     def daily_weather(self,weather):
-        pass
+        raw_main = []
+        raw_wind = []
+        for item in weather.keys():
+            if "main" in item:
+                raw_main.append(weather["main"])
+            if "wind" in item:
+                raw_wind.append(weather["wind"])
+        print(raw_main)
+        print("*"*10)
+        print(raw_wind)
+
     def five_day_weather(self,weather):
         pass
     def ten_day_weather(self,weather):
